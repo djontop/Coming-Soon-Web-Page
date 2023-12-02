@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Abel&display=swap");
+html,
+p,
+h1,
+h2,
+div {
+    font-family: "Abel", sans-serif !important;
+}
+
+p,
+b {
+    font-size: x-large;
+    font-weight: 300;
+}
+
+.footer-copyright {
+    bottom: 0 !important;
+}
+/* second page */
+#page_2_body #section_2{
+    background: linear-gradient(25deg, #4499f6, 50%, #a055fa);
+}
+#page_2_body #send_now{
+    background: linear-gradient(25deg, #a055fa, 50%, #4499f6);
+}
+#page_2_body #section_1{
+background-image: url('../../assets/img/construction-bg.png') ;
+background-repeat: no-repeat;
+background-size:95%;
+background-position: center;
+
+}
+#page_2_body .stay-connected{
+    color: grey !important;
+}
+@media (max-width: 768px){
+    #page_2_body #section_1{
+        display: none !important;
+    }   
+    #page_2_body .coming-soon-sm{
+        display: block !important;
+    }
+}
+@media (min-width: 768px){
+    #page_2_body .coming-soon-sm{
+        display: none !important;
+
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid {
+    animation: fadeIn 1s ease-in-out;
+}
+
+.quote-container {
+    margin-top: 20px;
+    font-size: 1.5rem;
+}
+
+.quote {
+    position: relative;
+    display: inline-block;
+}
+
+.highlight {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 0, 0.116);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.quote:hover .highlight {
+    opacity: 1;
+}
+
+@keyframes blink {
+    0% {
+      background-color: #ff0000;
+    }
+    50% {
+      background-color: #ffffff;
+    }
+    100% {
+      background-color: #ff0000; 
+    }
+  }
+  
+  .led {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    animation: blink 1s infinite;
+  }
+  
+.bulb-on {
+  filter: brightness(1);
+}
+
+.bulb-off {
+  filter: brightness(0.5);
+}
+
+  .bg-warning {
+    transition: filter 0.3s ease-in-out;
+  }
+  
+  .bulb-on .bg-warning {
+    filter: brightness(1);
+  }
+  
+  .bulb-off .bg-warning {
+    filter: brightness(0.5);
+  }
+  
