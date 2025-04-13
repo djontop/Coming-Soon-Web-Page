@@ -1,1 +1,101 @@
-(function(_0x32db73,_0x2f5d3e){const _0x51fab8=_0x5a4a,_0x290b74=_0x32db73();while(!![]){try{const _0x27a80a=parseInt(_0x51fab8(0x17d))/0x1+-parseInt(_0x51fab8(0x184))/0x2+parseInt(_0x51fab8(0x17e))/0x3+-parseInt(_0x51fab8(0x180))/0x4*(-parseInt(_0x51fab8(0x194))/0x5)+parseInt(_0x51fab8(0x19b))/0x6+-parseInt(_0x51fab8(0x182))/0x7+parseInt(_0x51fab8(0x198))/0x8*(-parseInt(_0x51fab8(0x17f))/0x9);if(_0x27a80a===_0x2f5d3e)break;else _0x290b74['push'](_0x290b74['shift']());}catch(_0x3d5ddb){_0x290b74['push'](_0x290b74['shift']());}}}(_0x49a9,0xeb86e));const countdown=()=>{const _0x405213=_0x5a4a,_0x35797c=new Date(_0x405213(0x18d))[_0x405213(0x18c)](),_0x50fe42=new Date()[_0x405213(0x18c)](),_0x1da698=_0x35797c-_0x50fe42,_0x537949=0x1,_0x34134a=_0x537949*0x3e8,_0x5492a9=_0x34134a*0x3c,_0x3bf149=_0x5492a9*0x3c,_0x25ea64=_0x3bf149*0x18,_0x44259f=Math[_0x405213(0x189)](_0x1da698/_0x25ea64),_0x709d35=Math['floor'](_0x1da698%_0x25ea64/_0x3bf149),_0x417756=Math[_0x405213(0x189)](_0x1da698%_0x3bf149/_0x5492a9),_0x4ce79e=Math[_0x405213(0x189)](_0x1da698%_0x5492a9/_0x34134a);document[_0x405213(0x190)](_0x405213(0x17c))[_0x405213(0x183)]=_0x44259f,document[_0x405213(0x190)]('.hour')[_0x405213(0x183)]=_0x709d35,document[_0x405213(0x190)](_0x405213(0x18b))[_0x405213(0x183)]=_0x417756,document['querySelector'](_0x405213(0x188))[_0x405213(0x183)]=_0x4ce79e;};function _0x5a4a(_0x3fb8ea,_0x3691a8){const _0x49a9cd=_0x49a9();return _0x5a4a=function(_0x5a4a2d,_0x3f7247){_0x5a4a2d=_0x5a4a2d-0x172;let _0x21f86f=_0x49a9cd[_0x5a4a2d];return _0x21f86f;},_0x5a4a(_0x3fb8ea,_0x3691a8);}setInterval(countdown,0xfa);const fetchRandomQuote=async()=>{const _0x65558e=_0x5a4a;try{const _0xa12e66=await fetch(_0x65558e(0x19c)),_0x5b141d=await _0xa12e66[_0x65558e(0x18e)]();return _0x5b141d[_0x65558e(0x17b)];}catch(_0x4262af){return console['error'](_0x65558e(0x172),_0x4262af),_0x65558e(0x179);}},getCurrentDate=()=>{const _0x439688=_0x5a4a,_0x41dc78=new Date();return _0x41dc78[_0x439688(0x177)]()[_0x439688(0x17a)]('T')[0x0];},updateDailyQuote=async()=>{const _0x58d93b=_0x5a4a,_0x1b94ba=getCurrentDate();let _0x2bd8a7=localStorage[_0x58d93b(0x178)](_0x58d93b(0x185));if(!_0x2bd8a7||_0x1b94ba!==_0x2bd8a7){const _0x18f71d=await fetchRandomQuote();document['querySelector'](_0x58d93b(0x192))[_0x58d93b(0x183)]=_0x18f71d,localStorage[_0x58d93b(0x197)](_0x58d93b(0x193),_0x18f71d),localStorage[_0x58d93b(0x197)](_0x58d93b(0x185),_0x1b94ba);}else{const _0x2b9d62=localStorage[_0x58d93b(0x178)](_0x58d93b(0x193));if(_0x2b9d62)document['querySelector']('.quote-container')['innerText']=_0x2b9d62;else{const _0x140b9f=await fetchRandomQuote();document['querySelector']('.quote-container')[_0x58d93b(0x183)]=_0x140b9f,localStorage[_0x58d93b(0x197)](_0x58d93b(0x193),_0x140b9f);}}},toggleBulb=()=>{const _0x28057c=_0x5a4a,_0x2e8e57=document[_0x28057c(0x191)],_0x750e27=document[_0x28057c(0x173)](_0x28057c(0x187));_0x2e8e57[_0x28057c(0x181)][_0x28057c(0x18a)](_0x28057c(0x195));const _0x3f68d8=_0x2e8e57[_0x28057c(0x181)][_0x28057c(0x19d)](_0x28057c(0x195));_0x750e27['innerText']=_0x3f68d8?_0x28057c(0x174):_0x28057c(0x176),localStorage[_0x28057c(0x197)](_0x28057c(0x18f),_0x3f68d8?'on':_0x28057c(0x186)),_0x2e8e57[_0x28057c(0x196)]['filter']=_0x3f68d8?'brightness(1)':_0x28057c(0x19a);},initializeBulbState=()=>{const _0x5ac75f=_0x5a4a,_0x48f79f=document[_0x5ac75f(0x191)],_0x179878=localStorage['getItem'](_0x5ac75f(0x18f));_0x179878==='on'?_0x48f79f['classList'][_0x5ac75f(0x199)]('bulb-on'):_0x48f79f['classList']['add'](_0x5ac75f(0x175));};initializeBulbState(),updateDailyQuote(),setInterval(updateDailyQuote,0x18*0x3c*0x3c*0x3e8);function _0x49a9(){const _0x171fa4=['contains','Error\x20fetching\x20daily\x20quote:','getElementById','💡\x20OFF','bulb-off','💡\x20ON','toISOString','getItem','Error\x20fetching\x20quote','split','content','.day','1778215iurnUd','2225508mWcVSx','99AFUmai','601628mnTNQg','classList','6598459nkVpxj','innerText','3744404LeoFHC','quoteDate','off','bulbButton','.seconds','floor','toggle','.minutes','getTime','Dec\x2025,\x202023\x2000:00:00','json','bulbState','querySelector','body','.quote-container','dailyQuote','55QFmDwk','bulb-on','style','setItem','559752TRytno','add','brightness(0.5)','2248128dyPmIe','https://api.quotable.io/random'];_0x49a9=function(){return _0x171fa4;};return _0x49a9();}
+const countdown = () => {
+    const countDate = new Date("May 1, 2025 00:00:00").getTime();
+  
+    const currentTime = new Date().getTime();
+    const gap = countDate - currentTime;
+  
+    if (gap <= 0) {
+      document.querySelector('.countdown-container').innerText = "The website is live!";
+      return;
+    }
+  
+    const millisecond = 1;
+    const second = millisecond * 1000;
+    const minutes = second * 60;
+    const hour = minutes * 60;
+    const day = hour * 24;
+  
+    const textDay = Math.floor(gap / day);
+    const textHour = Math.floor((gap % day) / hour);
+    const textMinutes = Math.floor((gap % hour) / minutes);
+    const textSecond = Math.floor((gap % minutes) / second);
+    document.querySelector('.day').innerText = textDay;
+    document.querySelector('.hour').innerText = textHour;
+    document.querySelector('.minutes').innerText = textMinutes;
+    document.querySelector('.seconds').innerText = textSecond;
+  };
+  
+  setInterval(countdown, 250);
+  
+  const fetchRandomQuote = () => {
+    const localQuotes = [
+      "The only way to do great work is to love what you do.",
+      "Success is not final, failure is not fatal: It is the courage to continue that counts.",
+      "Innovation distinguishes between a leader and a follower.",
+      "The future belongs to those who believe in the beauty of their dreams.",
+      "The best way to predict the future is to create it."
+    ];
+  
+    const randomIndex = Math.floor(Math.random() * localQuotes.length);
+    return localQuotes[randomIndex];
+  };
+  
+  const getCurrentDate = () => {
+    const today = new Date();
+    return today.toISOString().split('T')[0];
+  };
+  
+  const updateDailyQuote = () => {
+    const quoteContainer = document.querySelector('.quote-container');
+    if (!quoteContainer) {
+      console.error('Quote container element not found');
+      return;
+    }
+  
+    try {
+      const dailyQuote = fetchRandomQuote();
+      quoteContainer.innerText = dailyQuote;
+    } catch (error) {
+      console.error('Error updating quote:', error);
+      quoteContainer.innerText = "Wisdom is coming soon...";
+    }
+  };
+  
+  const toggleBulb = () => {
+    const body = document.body;
+    const bulbButton = document.getElementById('bulbButton');
+  
+    body.classList.toggle('bulb-on');
+    const isBulbOn = body.classList.contains('bulb-on');
+  
+    bulbButton.innerText = isBulbOn ? '💡 OFF' : '💡 ON';
+  
+    localStorage.setItem('bulbState', isBulbOn ? 'on' : 'off');
+  
+    body.style.filter = isBulbOn ? 'brightness(1)' : 'brightness(0.5)';
+  };
+  
+  
+  
+  const initializeBulbState = () => {
+    const body = document.body;
+    const bulbState = localStorage.getItem('bulbState');
+  
+    if (bulbState === 'on') {
+      body.classList.add('bulb-on');
+    } else {
+      body.classList.add('bulb-off');
+    }
+  };
+  
+  
+  initializeBulbState();
+  updateDailyQuote();
+  
+  // Execute these when the window loads to ensure DOM is ready
+  window.addEventListener('load', () => {
+    updateDailyQuote();
+  });
+  
+  setInterval(updateDailyQuote, 24 * 60 * 60 * 1000); // 24 hours
+  
